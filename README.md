@@ -75,6 +75,7 @@ const ballAnimationStyle = animation => {
 };
 ```  
 
+Play with this example on [this Snack](https://snack.expo.io/SkcRi1YLf)
 
 
 ## API
