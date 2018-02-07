@@ -27,7 +27,9 @@ const MyView = ({visible}) => (
 
 ---------------------------------------------
 
-More complex exemple, using spring animation.
+More complex exemple, using spring animation:
+
+![Ball animation](https://thumbs.gfycat.com/ShinyCreamyHummingbird-size_restricted.gif)
 
 
 ```jsx
