@@ -2,7 +2,7 @@
   "expo": {
     "name": "react-native-animation-hooks",
     "description": "This project is really great.",
-    "slug": "react-native-storage-slot",
+    "slug": "react-native-animation-hooks",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "platforms": ["ios", "android"],
