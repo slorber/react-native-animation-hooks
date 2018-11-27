@@ -14,7 +14,7 @@ const Comp = () => {
 
   return (
     <Animated.View style={{ opacity: animatedOpacity }}>
-      <Text>{Hello}</Text>
+      <Text>Hello</Text>
     </Animated.View>
   )
 }
