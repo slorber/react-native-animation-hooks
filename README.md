@@ -5,17 +5,19 @@
 The most convenient way to add little animations to your ReactNative application.
 
 ```jsx
-const [bool, setBool] = useState(false)
-  
-const animatedOpacity = useAnimation({
-  toValue: bool ? 1 : 0.5,
-})
-  
-return (
-  <Animated.View style={opacity: animatedOpacity}>
-    ...
-  </Animated.View> 
-)
+const Comp = () => {
+  const [bool, setBool] = useState(false)
+
+  const animatedOpacity = useAnimation({
+    toValue: bool ? 1 : 0.5,
+  })
+
+  return (
+    <Animated.View style={{ opacity: animatedOpacity }}>
+      <Text>{Hello}</Text>
+    </Animated.View>
+  )
+}
 ```
 
 - Tiny interface using hooks and Animated framework
