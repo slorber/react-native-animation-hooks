@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "version": "1.0.0",
-  "main": "build/index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "typings": "build/index.d.ts",
   "files": [
     "build"
