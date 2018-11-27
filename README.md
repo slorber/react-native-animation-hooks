@@ -7,6 +7,7 @@ The most convenient way to add little animations to your ReactNative application
 ```jsx
 const Comp = () => {
   const [bool, setBool] = useState(false)
+  const toggle = () => setBool(!bool);
 
   const animatedOpacity = useAnimation({
     toValue: bool ? 1 : 0.5,
@@ -14,7 +15,7 @@ const Comp = () => {
 
   return (
     <Animated.View style={{ opacity: animatedOpacity }}>
-      <Text onPress={() => setBool(!bool)}>Hello</Text>
+      <Text onPress={toggle}>Hello</Text>
     </Animated.View>
   )
 }
