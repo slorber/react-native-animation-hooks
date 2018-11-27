@@ -1,27 +1,53 @@
 {
-  "name": "react-native-auto-animate",
-  "version": "1.1.0",
-  "description": "Simple API for ReactNative animations",
-  "main": "AutoAnimate.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slorber/AutoAnimate.git"
+  "name": "react-native-animation-hooks",
+  "description": "Easily add React Native animations with hooks",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
   },
+  "license": "MIT",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
   "keywords": [
     "react",
     "react-native",
-    "reactnative",
-    "animations",
-    "animated"
+    "storage"
   ],
-  "author": "Sébastien Lorber",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/slorber/AutoAnimate/issues"
+  "scripts": {
+    "start": "concurrently \"yarn run start:expo\" \"yarn run start:typecheck\"",
+    "start:expo": "expo start",
+    "start:typecheck": "tsc --noEmit --watch",
+    "build": "tsc",
+    "build:clear": "rimraf build",
+    "prepublish": "yarn build && yarn configure:publish",
+    "postpublish": "yarn configure:expo && yarn build:clear",
+    "configure:publish": "json -I -f package.json -e 'this.main=\"build/index.js\"'",
+    "configure:expo": "json -I -f package.json -e 'this.main=\"node_modules/expo/AppEntry.js\"'"
   },
-  "homepage": "https://github.com/slorber/AutoAnimate#readme",
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/expo": "31.0.0",
+    "@types/react": "^16.7.7",
+    "@types/react-native": "^0.57.13",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-expo": "^5.0.0",
+    "concurrently": "^4.0.1",
+    "json": "^9.0.6",
+    "prettier": "^1.15.2",
+    "expo": "^31.0.2",
+    "react": "16.7.0-alpha.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-31-with-hooks-dangerzone.tar.gz",
+    "rimraf": "^2.6.2",
+    "typescript": "^3.1.6"
   }
 }

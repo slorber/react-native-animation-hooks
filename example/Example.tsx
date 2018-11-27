@@ -1,36 +1,3 @@
-# react-native-animation-hooks
-
-`yarn add react-native-animation-hooks`
-
-The most convenient way to add little animations to your ReactNative application.
-
-```jsx
-  const [bool, setBool] = useState(false)
-  
-  const animatedOpacity = useAnimation({
-    toValue: bool ? 1 : 0.5,
-  })
-  
-  return (
-    <Animated.View style={opacity: animatedOpacity}>
-       ...
-    </Animated.View> 
-  )
-```
-
-- Tiny interface with hooks and Animated framework 
-- Compatible with Expo
-- Low boilerplate
-- Full support for `spring` and `timing` animations 
-- Typescript definitions
-
-
-
-# Advanced example:
-
-This repo is an Expo app that you can run with `yarn start`.
-
-```tsx
 import React, { useState } from 'react'
 import { Animated, Switch, View, StyleProp, ViewStyle } from 'react-native'
 
@@ -104,16 +71,3 @@ const ExampleScreen = () => {
 }
 
 export default ExampleScreen
-```
-
-
-# TODO
-
-- Animated XY values
-- Tests
-
-# License
-
-MIT
-
-
