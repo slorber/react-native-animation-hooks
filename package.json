@@ -15,7 +15,13 @@
   "keywords": [
     "react",
     "react-native",
-    "storage"
+    "animation",
+    "animated",
+    "motion",
+    "expo",
+    "hooks",
+    "spring",
+    "timing"
   ],
   "scripts": {
     "start": "concurrently \"yarn run start:expo\" \"yarn run start:typecheck\"",
