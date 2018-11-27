@@ -6,25 +6,23 @@ The most convenient way to add little animations to your ReactNative application
 
 ```jsx
   const [bool, setBool] = useState(false)
-  
+
   const animatedOpacity = useAnimation({
     toValue: bool ? 1 : 0.5,
   })
-  
+
   return (
     <Animated.View style={opacity: animatedOpacity}>
        ...
-    </Animated.View> 
+    </Animated.View>
   )
 ```
 
-- Tiny interface with hooks and Animated framework 
+- Tiny interface using hooks and Animated framework
 - Compatible with Expo
-- Low boilerplate
-- Full support for `spring` and `timing` animations 
+- Reduce Animated.Value management boilerplate
+- Full support for `spring` and `timing` animations
 - Typescript definitions
-
-
 
 # Advanced example:
 
@@ -106,7 +104,6 @@ const ExampleScreen = () => {
 export default ExampleScreen
 ```
 
-
 # TODO
 
 - Animated XY values
@@ -115,5 +112,3 @@ export default ExampleScreen
 # License
 
 MIT
-
-
