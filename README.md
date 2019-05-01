@@ -35,7 +35,7 @@ This repo is an Expo app that you can run with `yarn start`.
 import React, { useState } from 'react'
 import { Animated, Switch, View, StyleProp, ViewStyle } from 'react-native'
 
-import { useAnimation } from 'AnimationHooks'
+import { useAnimation } from 'react-native-animation-hooks'
 
 const AnimatedShape = ({ style }: { style?: StyleProp<ViewStyle> }) => (
   <Animated.View
