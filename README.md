@@ -1,5 +1,8 @@
 # react-native-animation-hooks
 
+[![NPM](https://img.shields.io/npm/dm/react-native-animation-hooks.svg)](https://www.npmjs.com/package/react-native-animation-hooks)
+[![Build Status](https://travis-ci.com/slorber/react-native-animation-hooks.svg?branch=master)](https://travis-ci.com/slorber/react-native-animation-hooks)
+
 `yarn add react-native-animation-hooks`
 
 The most convenient way to add little animations to your ReactNative application.
