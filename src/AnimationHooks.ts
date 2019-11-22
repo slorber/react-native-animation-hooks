@@ -23,7 +23,7 @@ export type TimingAnimationConfig = BaseAnimationConfig &
   ({ type: 'timing' } & Animated.TimingAnimationConfig)
 
 export type SpringAnimationConfig = BaseAnimationConfig &
-  ({ type: 'spring' } & Animated.SpringAnimationConfig)
+  ({ type: 'spring', delay?: number } & Animated.SpringAnimationConfig)
 
 export type UseAnimationConfig = TimingAnimationConfig | SpringAnimationConfig
 
@@ -43,7 +43,15 @@ export const useAnimation = (config: UseAnimationConfig): Animated.Value => {
     if (config.type === 'timing') {
       Animated.timing(animatedValue, config).start()
     } else if (config.type === 'spring') {
-      Animated.spring(animatedValue, config).start()
+      const {delay, ...safeConfig} = config
+      let animation = Animated.spring(animatedValue, safeConfig)
+      if(delay) {
+          animation = Animated.sequence([
+              Animated.delay(delay),
+              animation
+          ])
+      } 
+      animation.start()
     } else {
       // @ts-ignore
       throw new Error('unsupported animation type=' + config.type)
