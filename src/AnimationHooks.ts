@@ -40,13 +40,21 @@ export const useAnimation = (config: UseAnimationConfig): Animated.Value => {
   const animatedValue = useAnimatedValue(getInitialValue(config))
 
   const animate = () => {
-    if (config.type === 'timing') {
-      Animated.timing(animatedValue, config).start()
-    } else if (config.type === 'spring') {
-      Animated.spring(animatedValue, config).start()
-    } else {
-      // @ts-ignore
-      throw new Error('unsupported animation type=' + config.type)
+    let animation = null;
+    switch(getAnimationType(config)) {
+      case 'timing':
+        animation = Animated.timing(animatedValue, config)
+        break
+      case 'spring':
+        animation = spring(animatedValue, config)
+        break
+      default:
+        // @ts-ignore
+        throw new Error('unsupported animation type=' + config.type)
+    }
+    if(animation !== null) animation.start()
+    return () => {
+      if(animation !== null) animation.stop()
     }
   }
 
