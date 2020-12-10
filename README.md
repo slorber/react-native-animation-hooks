@@ -110,11 +110,6 @@ const ExampleScreen = () => {
 export default ExampleScreen
 ```
 
-# TODO
-
-- Animated XY values
-- Tests
-
 # License
 
 MIT
